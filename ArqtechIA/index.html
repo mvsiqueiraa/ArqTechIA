@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificador de Vasos</title>
+    <link rel="stylesheet" href="~/static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Classificador de Vasos</h1>
+        <p>Faça upload de uma imagem ou use a câmera para identificar o tipo de vaso.</p>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <button id="start-camera">Abrir Câmera</button>
+            <video id="camera" autoplay style="display: none;"></video>
+            <br>
+            <input type="file" id="upload-image" accept="image/*">
+            <br>
+            <button id="classify-button">Classificar</button>
+        </section>
+        <section class="result-container">
+            <h2>Resultado:</h2>
+            <p id="result">Aguardando entrada...</p>
+        </section>
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const startCameraButton = document.getElementById('start-camera');
+        const camera = document.getElementById('camera');
+        const snapshotCanvas = document.createElement('canvas'); // Novo elemento canvas para capturar a imagem
+        snapshotCanvas.style.display = 'none'; // Oculta o canvas inicialmente
+        document.body.appendChild(snapshotCanvas); // Adiciona o canvas ao DOM
+
+        // Função para iniciar a câmera
+        async function startCamera() {
+            try {
+                const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true });
+                camera.srcObject = mediaStream;
+                camera.style.display = 'block';
+            } catch (err) {
+                console.error('Error accessing camera:', err);
+            }
+        }
+
+        // Função para capturar a imagem (can be implemented later)
+
+        // Função para enviar o arquivo ao servidor (can be implemented later)
+
+        startCameraButton.addEventListener('click', startCamera);
+    });
+    </script>
+</body>
+</html>
