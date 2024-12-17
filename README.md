@@ -16,8 +16,7 @@ Este projeto utiliza a API de acesso à câmera do navegador para capturar image
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
+   git clone https://github.com/mvsiqueiraa/ArqTechIA.git)
 
 2. Abra o arquivo `index.html` no navegador.
 
